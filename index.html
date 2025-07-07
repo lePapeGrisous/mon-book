@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Css/style.css">
+    <script src="Js/main.js" defer></script>
+    <title>Mon book Etienne pongerard</title>
+</head>
+<body>
+    <nav class="navbar">
+        <button data-target="Acceuil">Accueil</button>
+        <button data-target="Dweb">Développement Web</button>
+        <button data-target="Animation">Animation</button>
+        <button data-target="Jv">Jeux vidéos</button>
+        <button data-target="Contact">Contact</button>
+  </nav>
+  <main>
+    <section id="Acceuil" class="section active">
+        <h1>Bienvenue sur mon book</h1>
+        <p style="padding: 100px;" class="">Bonjour et bienvenue sur mon book ! Je m'appelle Etienne Pongerard, étudiant en MMI à l'IUT de Haguenau. Passionné par la vidéo, l'animation et le développement ! je vous invite à cliquer sur les section au dessus pour découvrir mon univers et mes créations.</p>
+    </section>
+    <section id="Dweb" class="section">
+        <h2>Site web réalisé</h2>
+        <div class="container" >
+            <div class="carousel-container" id="carousel1-container">
+                <div class="carousel" id="carousel1">
+                    <div class="carousel-item">
+                        <img src="Uploads/CUEJ-mini-site.png" alt="CUEJ Mini Site"></img>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Uploads/DecryptEau.png" alt="DecryptEau" controls></img>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Uploads/EdaeeImmo.png" alt="EdaeeImmo" controls></img>
+                    </div>
+                </div>
+        
+                <!-- Boutons de navigation -->
+                <button class="prev" data-carousel="carousel1" id="btnPrev">&lt;</button>
+                <button class="next" data-carousel="carousel1" id="btnNext">&gt;</button>
+        
+                <!-- Indicateurs -->
+                <div class="dots-container" data-carousel="carousel1"></div>
+            </div>
+            <div style="height: 100%; width: 50%" class="breakpoint-758">
+                <h2 id="TitreSite">Site web CUEJ</h2>
+                <p id="textSlide">Voici un site web réalisé en partenariat avec une équipe d'étudiants en journalisme.
+                Ce site a été développé en PHP avec Twig pour l'affichage.
+                Il est fourni avec un back office permettant aux journalistes d’intégrer leurs articles comme ils le souhaitent. Le code est disponible sur mon GitHub</p>
+                <br>
+                <h4>Technologie utilisé :</h4>
+                <br>
+                <ul>
+                     <p class="info">php</p>
+                     <p class="info">symfony</p>
+                     <p class="info">twig</p>
+                     <p class="info">Java-script</p>                      
+                </ul>
+                <a href="https://cuej.info/mini-sites/europe2024/visitor.php?page=theme" class="visiter-btn" id="btnVisite" target="_blank">Visiter le site</a>
+            </div>
+        </div>
+    </section>
+    <section id="Aniamtion" class="section">
+        <h2>Animation</h2>
+        <p>Dans cette section, vous trouverez des projets d'animation que j'ai réalisés.</p>
+        <p>Ces projets mettent en avant mes compétences en animation et en création de contenu visuel.</p>
+        <div class="container">
+            <div class="carousel-container" id="carousel2-container">
+                <div class="carousel" id="carousel2">
+                    <div class="carousel-item">
+                        <img src="Uploads/Animation1.png" alt="Animation 1"></img>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Uploads/Animation2.png" alt="Animation 2"></img>
+                    </div>
+                </div>
+        
+                <!-- Boutons de navigation -->
+                <button class="prev" data-carousel="carousel2">&lt;</button>
+                <button class="next" data-carousel="carousel2">&gt;</button>
+        
+                <!-- Indicateurs -->
+                <div class="dots-container" data-carousel="carousel2"></div>
+            </div>
+        </div>
+    </section>
+    <section id="Animation" class="section">
+        <h2>Animation</h2>
+        <p>Dans cette section, vous trouverez des projets d'animation que j'ai réalisés
+    </section>
+    <section id="Jv" class="section">
+        <h2>Jeux Vidéos</h2>
+    </section>
+    <section id="Contact" class="section">
+        <h2>Contact</h2>
+        <img src="Uploads/GitHub.png" alt="GitHub Logo" class="logo" href="https://github.com/lePapeGrisous">
+        <img src="Uploads/Youtube.png" alt="Youtube Logo" class="logo" href="https://www.youtube.com/@le_pape_grisous">
+        <p>Pour me contacter, vous pouvez m'envoyer un email à l'adresse suivante : <a href="mailto: etienne.pongerard@gmail.com">Mail<a/>
+
+        <div>
+            <a href="Uploads/CV.pdf" download="CV.pdf" class="telecharger-btn">Télécharger mon CV</a>
+            <p>Mes réseaux sociaux :</p>
+        </div>
+  </main>
+</body>
+</html>
