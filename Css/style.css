@@ -293,6 +293,46 @@ body {
     transform: scale(1.2);
 }
 
+/* ===========================
+   Mobile App Card (vertical images)
+   =========================== */
+.project-card.mobile-app {
+    display: flex;
+    flex-direction: row;
+    max-width: 700px;
+}
+
+.project-card.mobile-app .project-image {
+    width: 250px;
+    height: auto;
+    min-height: 450px;
+    flex-shrink: 0;
+}
+
+.project-card.mobile-app .project-image img,
+.project-card.mobile-app .carousel-slide {
+    height: 100%;
+    object-fit: contain;
+    background: var(--bg-secondary);
+}
+
+.project-card.mobile-app .project-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .project-card.mobile-app {
+        flex-direction: column;
+    }
+
+    .project-card.mobile-app .project-image {
+        width: 100%;
+        min-height: 350px;
+    }
+}
+
 .project-info {
     padding: 2rem;
 }
