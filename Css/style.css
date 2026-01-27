@@ -155,6 +155,36 @@ body {
     }
 }
 
+@keyframes textColorChange {
+    0% {
+        color: white;
+    }
+    50% {
+        color: black;
+    }
+    100% {
+        color: white;
+    }
+}
+
+@keyframes buttonColorChange {
+    0% {
+        background: white;
+        color: black;
+        border-color: white;
+    }
+    50% {
+        background: black;
+        color: white;
+        border-color: black;
+    }
+    100% {
+        background: white;
+        color: black;
+        border-color: white;
+    }
+}
+
 .hero-content {
     text-align: center;
     max-width: 800px;
@@ -163,9 +193,10 @@ body {
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
     margin-bottom: 1rem;
     font-weight: 400;
+    animation: textColorChange 8s ease infinite;
+    opacity: 0.8;
 }
 
 .hero-title {
@@ -174,35 +205,32 @@ body {
     letter-spacing: -0.04em;
     margin-bottom: 2rem;
     line-height: 1.1;
-    color: white;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    animation: textColorChange 8s ease infinite;
+    text-shadow: 0 2px 10px rgba(128, 128, 128, 0.3);
 }
 
 .hero-description {
     font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 3rem;
     line-height: 1.8;
+    animation: textColorChange 8s ease infinite;
+    opacity: 0.9;
 }
 
 .cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
-    background: white;
-    color: var(--primary-color);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
     font-size: 1rem;
-    transition: var(--transition);
-    border: 2px solid white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: buttonColorChange 8s ease infinite;
 }
 
 .cta-button:hover {
-    background: transparent;
-    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(128, 128, 128, 0.3);
 }
 
 /* ===========================
@@ -269,6 +297,11 @@ body {
     position: relative;
 }
 
+/* Video in carousel */
+video.carousel-slide {
+    object-fit: contain;
+}
+
 .carousel-dots {
     position: absolute;
     bottom: 15px;
@@ -293,6 +326,21 @@ body {
     transform: scale(1.2);
 }
 
+.carousel-dots .dot[data-video="true"] {
+    position: relative;
+}
+
+.carousel-dots .dot[data-video="true"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-30%, -50%);
+    border-style: solid;
+    border-width: 3px 0 3px 5px;
+    border-color: transparent transparent transparent currentColor;
+}
+
 /* ===========================
    Mobile App Card (vertical images)
    =========================== */
@@ -310,7 +358,8 @@ body {
 }
 
 .project-card.mobile-app .project-image img,
-.project-card.mobile-app .carousel-slide {
+.project-card.mobile-app .carousel-slide,
+.project-card.mobile-app .project-image video {
     height: 100%;
     object-fit: contain;
     background: var(--bg-secondary);
@@ -331,6 +380,14 @@ body {
         width: 100%;
         min-height: 350px;
     }
+}
+
+/* Video in project cards */
+.project-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: var(--bg-secondary);
 }
 
 .project-info {

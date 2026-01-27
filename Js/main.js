@@ -116,22 +116,33 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // ===========================
-    // Carrousel automatique
+    // Carrousel automatique et manuel
     // ===========================
     const carousels = document.querySelectorAll('.carousel');
 
     carousels.forEach(carousel => {
         const slides = carousel.querySelectorAll('.carousel-slide');
         const dots = carousel.querySelectorAll('.dot');
+        const isManual = carousel.classList.contains('manual-carousel');
         let currentIndex = 0;
 
         function showSlide(index) {
             slides.forEach((slide, i) => {
                 slide.classList.remove('active');
                 dots[i].classList.remove('active');
+                // Pause les vidéos quand on change de slide
+                if (slide.tagName === 'VIDEO') {
+                    slide.pause();
+                    slide.currentTime = 0;
+                }
             });
             slides[index].classList.add('active');
             dots[index].classList.add('active');
+
+            // Lance la vidéo si c'est une vidéo
+            if (slides[index].tagName === 'VIDEO') {
+                slides[index].play();
+            }
         }
 
         function nextSlide() {
@@ -139,8 +150,10 @@ document.addEventListener("DOMContentLoaded", function () {
             showSlide(currentIndex);
         }
 
-        // Changement automatique toutes les 3 secondes
-        setInterval(nextSlide, 3000);
+        // Changement automatique seulement pour les carrousels non-manuels
+        if (!isManual) {
+            setInterval(nextSlide, 3000);
+        }
 
         // Clic sur les dots pour navigation manuelle
         dots.forEach((dot, index) => {
